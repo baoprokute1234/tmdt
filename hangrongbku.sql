@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 26, 2019 at 08:12 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 10, 2019 lúc 06:22 AM
+-- Phiên bản máy phục vụ: 10.4.8-MariaDB
+-- Phiên bản PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hangrongbku`
+-- Cơ sở dữ liệu: `hangrongbku`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -36,34 +36,34 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Quần áo', NULL, NULL),
-(2, 'Laptop', NULL, NULL),
-(3, 'Điện Thoại', NULL, NULL),
-(4, 'Đồng hồ', NULL, NULL),
-(6, 'Giày', NULL, NULL),
-(7, 'Đồ ăn', NULL, NULL),
-(8, 'Mỹ phẩm', NULL, NULL),
-(9, 'Sữa tắm', NULL, NULL),
-(10, 'Bột giặt', NULL, NULL),
-(11, 'Xà bông', NULL, NULL),
-(12, 'Dầu gội', NULL, NULL),
-(13, 'Chuột vi tính', NULL, NULL),
-(14, 'Trà sữa', NULL, NULL),
-(15, 'Rượu', NULL, NULL),
-(16, 'Ti vi', NULL, NULL),
-(17, 'Máy lạnh', NULL, NULL),
-(18, 'Tủ lạnh', NULL, NULL),
-(19, 'Lò vi sóng', NULL, NULL),
-(20, 'Sách truyện', NULL, NULL);
+(1, 'Samsung', NULL, NULL),
+(2, 'Apple', NULL, NULL),
+(3, 'Oneplus', NULL, NULL),
+(4, 'Xiaomi', NULL, NULL),
+(6, 'Oppo', NULL, NULL),
+(7, 'Huawei', NULL, NULL),
+(8, 'Google', NULL, NULL),
+(9, 'Nokia', NULL, NULL),
+(10, 'LG', NULL, NULL),
+(11, 'Asus', NULL, NULL),
+(12, 'Lenovo', NULL, NULL),
+(13, 'Sony', NULL, NULL),
+(14, 'BlackBerry', NULL, NULL),
+(15, 'Meizu', NULL, NULL),
+(16, 'HTC', NULL, NULL),
+(17, 'Vsmart', NULL, NULL),
+(18, 'ZTE', NULL, NULL),
+(19, 'Vivo', NULL, NULL),
+(20, 'Razer', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Cấu trúc bảng cho bảng `comments`
 --
 
 CREATE TABLE `comments` (
@@ -76,7 +76,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `comments`
+-- Đang đổ dữ liệu cho bảng `comments`
 --
 
 INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `updated_at`) VALUES
@@ -93,7 +93,7 @@ INSERT INTO `comments` (`id`, `userID`, `productID`, `content`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -103,7 +103,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notifications`
+-- Cấu trúc bảng cho bảng `notifications`
 --
 
 CREATE TABLE `notifications` (
@@ -136,7 +136,7 @@ CREATE TABLE `notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `notifications`
+-- Đang đổ dữ liệu cho bảng `notifications`
 --
 
 INSERT INTO `notifications` (`id`, `userID`, `customerID`, `orderID`, `isNew`, `isDone`, `created_at`, `updated_at`) VALUES
@@ -155,12 +155,12 @@ INSERT INTO `notifications` (`id`, `userID`, `customerID`, `orderID`, `isNew`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Cấu trúc bảng cho bảng `orders`
 --
 
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `userID` int(10) UNSIGNED NOT NULL,
   `total` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -168,7 +168,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `orders`
+-- Đang đổ dữ liệu cho bảng `orders`
 --
 
 INSERT INTO `orders` (`id`, `date`, `userID`, `total`, `created_at`, `updated_at`) VALUES
@@ -187,7 +187,7 @@ INSERT INTO `orders` (`id`, `date`, `userID`, `total`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_detail`
+-- Cấu trúc bảng cho bảng `order_detail`
 --
 
 CREATE TABLE `order_detail` (
@@ -201,7 +201,7 @@ CREATE TABLE `order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order_detail`
+-- Đang đổ dữ liệu cho bảng `order_detail`
 --
 
 INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `created_at`, `updated_at`) VALUES
@@ -230,7 +230,7 @@ INSERT INTO `order_detail` (`id`, `productID`, `price`, `quantity`, `oderID`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Cấu trúc bảng cho bảng `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -242,7 +242,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -253,34 +253,51 @@ CREATE TABLE `products` (
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `cateID` int(10) UNSIGNED NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `lastTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastTime` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `quantity` int(11) NOT NULL,
-  `numRate` int(11) DEFAULT '0',
+  `numRate` int(11) DEFAULT 0,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `numStar` float NOT NULL DEFAULT '0'
+  `numStar` float NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `sellerID`, `price`, `description`, `cateID`, `status`, `lastTime`, `quantity`, `numRate`, `image`, `created_at`, `updated_at`, `numStar`) VALUES
-(1, 'Quần em bé', 6, 200000, '<p><strong>aaaaaaaaaaaaaaaaaaaaaa</strong></p>', 1, 1, '2019-05-25 09:27:26', 11, 4, 'quan-thun-be-gai-ngan-concung-g017008.jpg', NULL, NULL, 16),
-(2, 'Áo sân nhà milan', 6, 200000, 'áo đẹp', 1, 1, '2019-05-25 09:27:26', 152, 0, 'Ao-ac-milan-san-nha-1-300x300.jpg', NULL, NULL, 0),
-(6, 'Đồng hồ Rolex', 2, 10000000, 'hello', 4, 1, '2019-05-25 15:44:08', 1090, 0, 'UploadsNewsoyster-perpetual-118348-day-date-36png_540_660.jpg', NULL, NULL, 0),
-(7, 'Cơm sườn 15k', 1, 15000, 'Cơm sườn chất lượng đảm bảo ngon hơn ktx, tặng kèm canh và cơm thêm nếu muốn.', 7, 1, '2019-05-25 09:18:31', 93, 2, 'cach-uop-thit-nuong-com-tam.jpg', NULL, NULL, 9),
-(8, 'LOGO', 6, 20000, '<p>asac</p>', 1, 1, '2019-05-25 09:27:26', 33, 0, '1557539007.jpg', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
-(9, 'Dầu gội X-men', 6, 40000, '<h2>Dầu gội hương nước hoa X-Men Active 180g lấy cảm hứng từ oải hương v&agrave; gỗ tuyết t&ugrave;ng cho bạn cảm gi&aacute;c m&aacute;t lạnh, sảng kho&aacute;i v&agrave; đầy c&aacute; t&iacute;nh , c&ocirc;ng thức độc đ&aacute;o từ dầu gội sẽ mang đến cho bạn m&aacute;i t&oacute;c khỏe mạnh v&agrave; sạch da đầu.</h2>', 12, 1, '2019-05-25 12:59:30', 8, 0, '1557745507.jpg', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
-(10, 'Attack on Titan tập 1', 10, 120000, '<p>Truyện c&ograve;n mới, h&igrave;nh vẽ đẹp, ai mua m&igrave;nh pass lại</p>', 20, 1, '2019-05-18 14:34:30', 34, 0, '1557991818.jpg', '2019-05-16 00:30:18', '2019-05-16 00:30:18', 0),
-(11, 'Fiction', 6, 400000, '<p>Rượu face</p>', 15, 1, '2019-05-25 09:27:26', 20, 3, '1558154408.jpg', '2019-05-17 21:40:08', '2019-05-17 21:40:08', 11),
-(12, 'FreeWings Coat', 11, 400000, '<p>Đ&ocirc;i c&aacute;nh tự do Attack on Titan</p>\r\n\r\n<p>&nbsp;</p>', 1, 1, '2019-05-25 13:46:49', 200, 1, '1558190053.jpg', '2019-05-18 07:34:13', '2019-05-18 07:34:13', 4);
+(1, 'BlackBerry KEY2', 6, 200000, '', 14, 1, '2019-11-10 05:13:27', 9, 4, 'blackberry-key2-3-400x460.png', NULL, NULL, 16),
+(2, 'BlackBerry KEY2 LE', 6, 200000, '', 14, 1, '2019-11-10 05:13:31', 152, 0, 'blackberry-key2-le-1-400x460.png', NULL, NULL, 0),
+(6, 'BlackBerry KEYone 4GB/64GB', 2, 10000000, '', 14, 1, '2019-11-10 05:13:33', 1090, 0, 'blackberry-keyone-1-400x460.png', NULL, NULL, 0),
+(7, 'BlackBerry KEYone 3GB/32GB', 1, 15000, '', 14, 1, '2019-11-10 05:13:36', 93, 2, 'blackberry-keyone-3gb-400x460.png', NULL, NULL, 9),
+(8, 'Iphone 7 Plus Gold', 6, 20000, '', 2, 1, '2019-11-10 05:13:44', 33, 0, 'iphone-7-plus-gold-400x460.png', '2019-05-10 18:43:27', '2019-05-10 18:43:27', 0),
+(9, 'Iphone 8 Plus', 6, 40000, '', 2, 1, '2019-11-10 05:13:41', 3, 0, 'iphone-8-plus-1-400x460.png', '2019-05-13 04:05:07', '2019-05-13 04:05:07', 0),
+(10, 'Iphone 11 Pro Max 512GB', 10, 120000, '', 2, 1, '2019-11-10 05:13:48', 34, 0, 'iphone-11-pro-max-512gb-gold-400x460.png', '2019-05-16 00:30:18', '2019-05-16 00:30:18', 0),
+(11, 'Iphone XS Max 256GB White', 6, 400000, '', 2, 1, '2019-11-10 05:13:56', 20, 3, 'iphone-xs-max-256gb-white-400x460.png', '2019-05-17 21:40:08', '2019-05-17 21:40:08', 11),
+(12, 'Nokia 2.2 Black', 11, 400000, '', 9, 1, '2019-11-10 05:13:52', 200, 1, 'nokia-22-black-400x460.png', '2019-05-18 07:34:13', '2019-05-18 07:34:13', 4),
+(13, 'Vsmart Joy 2 Plus 2GB', 23, 2500000, '', 17, 1, '2019-11-10 04:54:56', 20, 5, 'vsmart-joy-2-plus-2gb-blue-18thangbh-400x460.png', NULL, NULL, 4),
+(14, 'Vsmart Live 6GB White', 2, 2500000, '', 17, 1, '2019-11-10 04:55:20', 20, 3, 'vsmart-live-blue-18thangbh-1-400x460.png', NULL, NULL, 3),
+(15, 'Vsmart Live Blue', 13, 2700000, '', 17, 1, '2019-11-10 04:57:00', 10, 3, 'vsmart-live-blue-18thangbh-1-400x460.png', NULL, NULL, 3),
+(16, 'Vsmart Star Coral', 10, 2200000, '', 17, 1, '2019-11-10 04:58:13', 10, 3, 'vsmart-star-coral-400x460.png', NULL, NULL, 3),
+(17, 'Samsung Galaxy A50 128GB Blue', 26, 4700000, '', 1, 1, '2019-11-10 05:00:39', 100, 4, 'samsung-galaxy-a50-128gb-blue-400x460.png', NULL, NULL, 4),
+(18, 'Samsung Galaxy Note 10 Plus Silver', 26, 22900000, '', 1, 1, '2019-11-10 05:01:42', 100, 4, 'samsung-galaxy-note-10-plus-silver-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(19, 'Vivo S1 Blue', 26, 2900000, '', 1, 1, '2019-11-10 05:03:18', 100, 4, 'vivo-s1-blue-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(20, 'Vivo V15', 26, 2300000, '', 19, 1, '2019-11-10 05:08:18', 100, 4, 'vivo-v15-quanghai-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(21, 'Vivo V17 Pro Blue', 11, 2500000, '', 19, 1, '2019-11-10 05:06:23', 77, 5, 'vivo-v17-pro-blue-noo-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 5),
+(22, 'Vivo Y19 White', 6, 2500000, '', 19, 1, '2019-11-10 05:08:12', 1, 3, 'vivo-y19-white-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 3),
+(23, 'Nokia 6.1 Plus ', 9, 2500000, '', 9, 1, '2019-11-10 05:10:01', 20, 4, 'nokia-61-plus-3-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(24, 'Nokia 7.2 Black', 9, 2800000, '', 9, 1, '2019-11-10 05:10:48', 20, 4, 'nokia-72-black-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(25, 'Nokia 8.1 Blue', 9, 2800000, '', 9, 1, '2019-11-10 05:11:23', 20, 4, 'nokia-81-blue-18thangbh-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(26, 'Huawei Nova 2i Purple', 9, 2800000, '', 7, 1, '2019-11-10 05:17:49', 20, 4, 'huawei-nova-3i-purple-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(27, 'Huawei P30 Lite', 9, 10800000, '', 7, 1, '2019-11-10 05:17:52', 20, 4, 'huawei-p30-lite-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(28, 'Huawei P30 Pro', 9, 20800000, '', 7, 1, '2019-11-10 05:17:57', 20, 4, 'huawei-p30-pro-1-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4),
+(29, 'Huawei Y9 Prime', 9, 1800000, '', 7, 1, '2019-11-10 05:19:29', 20, 4, 'huawei-y9-prime-2019-blue-400x460.png', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 4);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ratings`
+-- Cấu trúc bảng cho bảng `ratings`
 --
 
 CREATE TABLE `ratings` (
@@ -298,7 +315,7 @@ CREATE TABLE `ratings` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usercarts`
+-- Cấu trúc bảng cho bảng `usercarts`
 --
 
 CREATE TABLE `usercarts` (
@@ -312,17 +329,19 @@ CREATE TABLE `usercarts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `usercarts`
+-- Đang đổ dữ liệu cho bảng `usercarts`
 --
 
 INSERT INTO `usercarts` (`id`, `userID`, `productID`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
 (2, 11, 9, 1, 0, '2019-05-25 05:59:30', '2019-05-25 05:59:30'),
-(3, 11, 6, 1, 0, '2019-05-25 06:08:26', '2019-05-25 06:08:26');
+(3, 11, 6, 1, 0, '2019-05-25 06:08:26', '2019-05-25 06:08:26'),
+(4, 26, 1, 2, 0, '2019-11-09 02:32:36', '2019-11-09 02:32:36'),
+(5, 26, 9, 5, 0, '2019-11-09 02:32:46', '2019-11-09 02:32:46');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -335,9 +354,9 @@ CREATE TABLE `users` (
   `avatar` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sex` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `dateOfBirth` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `role` int(11) NOT NULL DEFAULT '0',
-  `confirm` tinyint(1) NOT NULL DEFAULT '0',
+  `dateOfBirth` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `role` int(11) NOT NULL DEFAULT 0,
+  `confirm` tinyint(1) NOT NULL DEFAULT 0,
   `confirmation_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -345,34 +364,35 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `avatar`, `sex`, `status`, `dateOfBirth`, `role`, `confirm`, `confirmation_code`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Đặng Hoàng Ân', 'an@gmail.com', '123456', '0123456789', 'Hà Nội', '256-512.png', 1, 1, '2019-05-25 15:08:19', 0, 1, NULL, NULL, NULL, NULL),
 (2, 'Chu Chỉ Nhược', 'ccn@gmail.com', '123456', '0123456789', 'Trung Quốc', '256-512.png', 0, 1, '2019-05-25 15:08:23', 0, 1, NULL, NULL, NULL, NULL),
-(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'KTX khu A ĐHQG Thành phố Hồ Chí Minh', '1558153025.jpg', 1, 1, '2019-05-26 03:49:47', 0, 1, NULL, 'NIzwtQSEdQqNrJDq7uO7JwAfOk3AXQ5htmfXLTC926fVzuRqGhRrQFsK7UqN', '2019-04-28 08:52:38', '2019-05-17 22:06:42'),
+(6, 'Hoang An', '1610132@hcmut.edu.vn', '$2y$10$CCV9rISZJo2ZgmW4E0gz2OYUnsW5USZEBVhaZKvgHqsLOhvcMtdve', '0383998672', 'KTX khu A ĐHQG Thành phố Hồ Chí Minh', '1558153025.jpg', 1, 1, '2019-11-09 03:35:35', 0, 1, NULL, '5SAwyBcYGr6N2xDexSuSfCKBZeN99hign6TQ1NhyXRE6aITW6RUlYpRBGCVm', '2019-04-28 08:52:38', '2019-05-17 22:06:42'),
 (9, 'Đặng Hoàng Ân', '16101322@hcmut.edu.vn', '$2y$10$laGqrtRqnX2JNT.tLEmK3e5GW7GaLnw15I9qzTnzLv/SgLqsKN/52', '0383998672', 'HCMC', '256-512.png', 1, 1, '2019-05-25 15:08:29', 0, 1, NULL, 'Zu5sDlevuWpEU0qfXjEFWbtPQ6RUdpkdcTSJCb3y', '2019-04-28 09:20:38', '2019-04-28 09:20:38'),
 (10, 'Huỳnh Yến Nhi', 'nhihuynh@gmail.com', '$2y$10$xnL635mT9tfE0wb./6GiL..8w8ZDOy19yhF1kKhQxAv2MFTB4dl06', '0987654321', 'Nha Trang', '256-512.png', 0, 1, '2019-05-25 15:08:32', 0, 1, NULL, 'dLJMHorrjEhMX60WCMWAVb5DRAY82iZxKLDrxJzhFlWrnWgzlBPeuEzuoqSl', '2019-04-28 09:22:11', '2019-05-16 02:50:54'),
 (11, 'Ricardo KaKa', 'rikaka@gmail.com', '$2y$10$NGT6wIUp/PeMB2SJDKX6MOz/0ZOGLOf3H0EPMSmq91NAwXlaLoapu', '0123456789', 'Brazil', '256-512.png', 1, 1, '2019-05-25 15:08:34', 0, 1, NULL, 'Ph7bA2qdDui5CACCiiZzJzBz6PnimUfwWsEQlWD8EePV9btn9XIBx3bAiGhB', '2019-05-13 08:13:02', '2019-05-25 06:13:43'),
 (12, 'Alexandre Pato', 'patomilan@gmail.com', '$2y$10$YD46bymUhJvPs8qFRj7kCODOpJM4PqYagOXxeVy7a2hueP/MunLDe', '0987654321', 'Brazil', '256-512.png', 1, 1, '2019-05-25 15:08:37', 0, 1, NULL, 'WvefpgAz0uRI48s8kPUJLrcnTpSK7QPqjW2cQIZGi86BT4Hqa9D6PimyOWR8', '2019-05-17 20:37:12', '2019-05-17 20:37:12'),
 (13, 'Kuroba Kaitou', 'kaitoukido1412@gmail.com', '$2y$10$947kwE7b3y1Y1g89PbKp6u8Kpz68Q4VoV.BsOonevU1oUii.C.BjO', '0123456789', 'Tokio, Japan', '256-512.png', 1, 1, '2019-05-25 15:08:40', 0, 1, NULL, 'db4rsehqM1qg714QaQXbcpk4Z6WBMhrNWJQJEdItYEkEIi403xTMrTXXkC27', '2019-05-17 20:39:18', '2019-05-17 20:39:18'),
-(14, 'Supreme Admin', 'andang12111998@gmail.com', '$2y$10$c/W1WP0uYm9EgEKE/LFuzOcgZz4BXXbuU55N.OKM3BL/QQVOOm0FC', '0383998672', 'Nha Trang', '256-512.png', 1, 1, '2019-05-26 02:53:19', 1, 1, NULL, 'VhppLZ4xZcDhlPxg67S34VsYeePqa7kpyUGXrTZtvNQB3gBiQ0iwdtpPf1fl', '2019-05-23 21:22:06', '2019-05-23 21:22:06'),
+(14, 'Supreme Admin', 'andang12111998@gmail.com', '$2y$10$c/W1WP0uYm9EgEKE/LFuzOcgZz4BXXbuU55N.OKM3BL/QQVOOm0FC', '0383998672', 'Nha Trang', '256-512.png', 1, 1, '2019-11-09 03:39:07', 1, 1, NULL, 'pvWCp3l32ZTmdPRfuFjYuKJnLK9g604PsBxJJwvFsY62tyzWAOOk2Q1viDvq', '2019-05-23 21:22:06', '2019-05-23 21:22:06'),
 (23, 'Kudo Shinichi', 'phantomkaitoukido1412@gmail.com', '$2y$10$uwTVZyluTLdYIVjZuYMpM.ShmDvLJLVJikpby1YbQ6SHHSP8K.r6G', '0383998672', 'Bieka, Tokio, Japan', '256-512.png', 1, 1, '2019-05-26 04:18:14', 0, 1, NULL, 'fvt1U4le1XFWpjb7bnXJXWR3sRrHAUunErbx21m0AdCz48Cl89WUdJduRdT0', '2019-05-25 20:50:12', '2019-05-25 20:52:39'),
-(24, 'dien', '1610179@hcmut.edu.vn', '$2y$10$6W92TxH/5p2rrpLZooTPquB85H9oYyV8HYJHpu91D8jXyGmzr/a32', '0123456789', 'HCMC', '256-512.png', 1, 1, '2019-05-26 04:20:26', 0, 1, NULL, 'i63q2lgtdUBj8VpIwoYOHKTvrnlwpLjKl6MsKO54', '2019-05-25 21:19:05', '2019-05-25 21:20:26');
+(24, 'dien', '1610179@hcmut.edu.vn', '$2y$10$6W92TxH/5p2rrpLZooTPquB85H9oYyV8HYJHpu91D8jXyGmzr/a32', '0123456789', 'HCMC', '256-512.png', 1, 1, '2019-05-26 04:20:26', 0, 1, NULL, 'i63q2lgtdUBj8VpIwoYOHKTvrnlwpLjKl6MsKO54', '2019-05-25 21:19:05', '2019-05-25 21:20:26'),
+(26, 'Võ Khắc Trí', 'outofmilkyway@gmail.com', '$2y$10$L6oa73f8cGG1cMh8/gdXcOpyEn9Hg0JOJXo9aHBuroh9BSE0o8hPy', '0703230778', 'Tp. HCM', '256-512.png', 1, 1, '2019-11-09 08:49:44', 0, 1, NULL, '5hFft1XUndaiSeeim0EyERn0BZPYoSKjBkk4XKnz', '2019-11-09 01:48:57', '2019-11-09 01:49:44');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `comments`
+-- Chỉ mục cho bảng `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
@@ -380,13 +400,13 @@ ALTER TABLE `comments`
   ADD KEY `comments_productid_foreign` (`productID`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `notifications`
+-- Chỉ mục cho bảng `notifications`
 --
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`),
@@ -395,14 +415,14 @@ ALTER TABLE `notifications`
   ADD KEY `notifications_orderid_foreign` (`orderID`);
 
 --
--- Indexes for table `orders`
+-- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `orders_userid_foreign` (`userID`);
 
 --
--- Indexes for table `order_detail`
+-- Chỉ mục cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`),
@@ -410,13 +430,13 @@ ALTER TABLE `order_detail`
   ADD KEY `order_detail_oderid_foreign` (`oderID`);
 
 --
--- Indexes for table `password_resets`
+-- Chỉ mục cho bảng `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -424,7 +444,7 @@ ALTER TABLE `products`
   ADD KEY `products_cateid_foreign` (`cateID`);
 
 --
--- Indexes for table `ratings`
+-- Chỉ mục cho bảng `ratings`
 --
 ALTER TABLE `ratings`
   ADD PRIMARY KEY (`id`),
@@ -434,7 +454,7 @@ ALTER TABLE `ratings`
   ADD KEY `ratings_user_id_index` (`user_id`);
 
 --
--- Indexes for table `usercarts`
+-- Chỉ mục cho bảng `usercarts`
 --
 ALTER TABLE `usercarts`
   ADD PRIMARY KEY (`id`),
@@ -442,89 +462,89 @@ ALTER TABLE `usercarts`
   ADD KEY `usercarts_productid_foreign` (`productID`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `notifications`
+-- AUTO_INCREMENT cho bảng `notifications`
 --
 ALTER TABLE `notifications`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
--- AUTO_INCREMENT for table `order_detail`
+-- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `ratings`
+-- AUTO_INCREMENT cho bảng `ratings`
 --
 ALTER TABLE `ratings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usercarts`
+-- AUTO_INCREMENT cho bảng `usercarts`
 --
 ALTER TABLE `usercarts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `comments`
+-- Các ràng buộc cho bảng `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `comments_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `notifications`
+-- Các ràng buộc cho bảng `notifications`
 --
 ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_customerid_foreign` FOREIGN KEY (`customerID`) REFERENCES `users` (`id`) ON DELETE CASCADE,
@@ -532,33 +552,33 @@ ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `orders`
+-- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_userid_foreign` FOREIGN KEY (`userID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `order_detail`
+-- Các ràng buộc cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD CONSTRAINT `order_detail_oderid_foreign` FOREIGN KEY (`oderID`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `order_detail_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_cateid_foreign` FOREIGN KEY (`cateID`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `products_sellerid_foreign` FOREIGN KEY (`sellerID`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `ratings`
+-- Các ràng buộc cho bảng `ratings`
 --
 ALTER TABLE `ratings`
   ADD CONSTRAINT `ratings_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `usercarts`
+-- Các ràng buộc cho bảng `usercarts`
 --
 ALTER TABLE `usercarts`
   ADD CONSTRAINT `usercarts_productid_foreign` FOREIGN KEY (`productID`) REFERENCES `products` (`id`) ON DELETE CASCADE,
