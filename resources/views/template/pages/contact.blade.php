@@ -39,7 +39,7 @@
                     <h6 class="contact-title" style ="color: yellow">Địa chỉ</h6>
                     <p>
                         268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh.<br>
-                        Email: hangrongbku@gmail.com. <br>
+                        Email: phonesharkstore@gmail.com. <br>
                         Số điện thoại: 19008198
                     </p>
                     <div class="space20">&nbsp;</div>
@@ -47,14 +47,7 @@
                     <p>
                         Liên lạc với chúng tôi qua địa chỉ email dưới đây<br>
         
-                        <a href="mailto:biz@betadesign.com" style ="color: yellow">hangrongbku@gmail.com</a>
-                    </p>
-                    <div class="space20">&nbsp;</div>
-                    <h6 class="contact-title" style ="color: yellow">Tuyển dụng</h6>
-                    <p>
-                        Chúng tôi đang tìm kiếm các nhân sự tài tăng <br>
-                        Nộp CV tại đây. <br>
-                        <a href="hr@betadesign.com" style ="color: yellow">hr@betadesign.com</a>
+                        <a href="mailto:biz@betadesign.com" style ="color: yellow">phonesharkstore@gmail.com</a>
                     </p>
                 </div>
             </div>

@@ -15,57 +15,57 @@ use Carbon\Traits\Rounding;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hangrongbku',[
+Route::get('/phonesharkstore',[
 	'as'=>'index.getIndex',
 	'uses'=>'ProductController@getIndex'
 ]);
-Route::get('/hangrongbku/products/{id}',[
+Route::get('/phonesharkstore/products/{id}',[
 	'as' => 'products.getProduct',
 	'uses' => 'ProductController@getProduct'
 ]);
-Route::get('/hangrongbku/user',function(){
+Route::get('/phonesharkstore/user',function(){
 	return view('template.pages.user_inform');
 });
 Route::get('/sign-out',[
 	'as' => 'signout.logout',
 	'uses' => 'Auth\LoginController@logout'
 ]);
-Route::get('/hangrongbku/checkout',[
+Route::get('/phonesharkstore/checkout',[
 	'as' => 'checkout',
 	'uses' => 'ProductController@showCheckout'
 ]);
-Route::get('/hangrongbku/about',[
+Route::get('/phonesharkstore/about',[
 	'as' => 'about',
 	'uses' => 'ProductController@showAbout'
 ]);
-Route::get('/hangrongbku/contact',[
+Route::get('/phonesharkstore/contact',[
 	'as' => 'contact',
 	'uses' => 'ProductController@showContact'
 ]);
-Route::get('/hangrongbku/product/{id}',[
+Route::get('/phonesharkstore/product/{id}',[
 	'as' => 'product',
 	'uses' => 'ProductController@getProduct'
 ]);
 
-Route::post('/hangrongbku/product/{id}/',[
+Route::post('/phonesharkstore/product/{id}/',[
 	'as' => 'products.postRating',
 	'uses' => 'ProductController@postRating'
 ]);
 
-Route::get('/hangrongbku/user',[
+Route::get('/phonesharkstore/user',[
 	'as' => 'user.inform',
 	'uses' => 'UserController@showUserInform'
 ]);
-Route::post('/hangrongbku/user',[
+Route::post('/phonesharkstore/user',[
 	'as' => 'editUser',
 	'uses' => 'UserController@editUser'
 ]);
-Route::get('/hangrongbku/user/uploadproduct',[
+Route::get('/phonesharkstore/user/uploadproduct',[
 	'as' => 'uploadProduct',
 	'uses' => 'UserController@uploadProduct'
 ]);
 
-Route::post('/hangrongbku/user/uploadproduct',[
+Route::post('/phonesharkstore/user/uploadproduct',[
 	'as' => 'uploadProductSave',
 	'uses' => 'UserController@uploadProductSave'
 ]);
@@ -82,7 +82,7 @@ Route::get('/sign-in',[
 	'as'=> 'signin.getSignin',
 	'uses' => 'Auth\LoginController@getSignin'
 ]);
-Route::get('hangrongbku/user/productuser',[
+Route::get('phonesharkstore/user/productuser',[
 	'as' => 'productuser',
 	'uses' => 'UserController@getProductUser'
 ]);
@@ -91,86 +91,86 @@ Route::post('/sign-in',[
 	'uses' => 'Auth\LoginController@postSignin'
 ]);
 
-Route::post('hangrongbku/search',[
+Route::post('phonesharkstore/search',[
 	'as' => 'search',
 	'uses' => 'ProductController@getSearch'
 ]);
-Route::post('hangrongbku/search/price',[
+Route::post('phonesharkstore/search/price',[
 	'as' => 'search-price',
 	'uses' => 'ProductController@getSearchPrice'
 ]);
 
-Route::get('hangrongbku/categories/{id}',[
+Route::get('phonesharkstore/categories/{id}',[
 	'as'=>'categories.getCategories',
 	'uses' => 'ProductController@getCategories'
 ]);
 
-Route::get('hangrongbku/order',[
+Route::get('phonesharkstore/order',[
 	'as'=> 'order.getCart',
 	'uses' => 'ProductController@getCart'
 ]);
-Route::get('hangrongbku/order/{pid}/user/{uid}',[
+Route::get('phonesharkstore/order/{pid}/user/{uid}',[
 	'as'=> 'order.addToCart',
 	'uses' => 'ProductController@addToCart'
 ]);
-Route::post('hangrongbku/order/',[
+Route::post('phonesharkstore/order/',[
 	'as'=> 'order.postAddToCart',
 	'uses' => 'ProductController@postAddToCart'
 ]);
 
-Route::get('hangrongbku/order/remove/{id}',[
+Route::get('phonesharkstore/order/remove/{id}',[
 	'as'=> 'order.removeCart',
 	'uses' => 'ProductController@removeCart'
 ]);
 
-Route::post('hangrongbku/product',[
+Route::post('phonesharkstore/product',[
 	'as' => 'product.postComment',
 	'uses' => 'ProductController@postComment'
 ]);
 
-Route::get('hangrongbku/order/create/',[
+Route::get('phonesharkstore/order/create/',[
 	'as'=> 'order.createOrder',
 	'uses' => 'ProductController@createOrder'
 ]);
 
-Route::get('hangrongbku/user/history/', [
+Route::get('phonesharkstore/user/history/', [
 	'as'=> 'user.getHistory',
 	'uses' => 'UserController@getHistory'
 ]);
 
-Route::get('hangrongbku/user/sellhistory/', [
+Route::get('phonesharkstore/user/sellhistory/', [
 	'as'=> 'sellhistory.getAllNotifications',
 	'uses' => 'NotificationCotroller@getAllNotifications'
 ]);
 
-Route::post('hangrongbku/user/productuser/update',[
+Route::post('phonesharkstore/user/productuser/update',[
 	'as' => 'products.update',
 	'uses' => 'ProductController@updateProduct'
 ]);
-Route::get('hangrongbku/user/productuser/update/{id}',[
+Route::get('phonesharkstore/user/productuser/update/{id}',[
 	'as' => 'products.show',
 	'uses' => 'ProductController@showProductUser'
 ]);
 
-Route::get('hangrongbku/user/productuser/remove/{id}',[
+Route::get('phonesharkstore/user/productuser/remove/{id}',[
 	'as'=> 'products.remove',
 	'uses' => 'ProductController@removeProduct'
 ]);
 
-Route::get('hangrongbku/user/notification/{id}',[
+Route::get('phonesharkstore/user/notification/{id}',[
 	'as'=> 'notification.getNotification',
 	'uses' => 'NotificationCotroller@getNotification'
 ]);
 
-Route::get('hangrongbku/user/notification/comfirm/{id}',[
+Route::get('phonesharkstore/user/notification/comfirm/{id}',[
 	'as'=> 'notification.getComfirm',
 	'uses' => 'NotificationCotroller@getComfirm'
 ]);
-Route::get('hangrongbku/user/notification/remove/{id}',[
+Route::get('phonesharkstore/user/notification/remove/{id}',[
 	'as'=> 'notification.getRemoveNote',
 	'uses' => 'NotificationCotroller@getRemoveNote'
 ]);
-Route::get('hangrongbku/user/history/remove/{id}',[
+Route::get('phonesharkstore/user/history/remove/{id}',[
 	'as'=> 'history.getRemoveOrder',
 	'uses' => 'ProductController@getRemoveOrder'
 ]);
@@ -181,7 +181,7 @@ Route::post('posts', 'HomeController@postPost')->name('posts.post');
 
 Route::get('posts/{id}', 'HomeController@show')->name('posts.show');
 
-Route::post('hangrongbku/postMail',[
+Route::post('phonesharkstore/postMail',[
 	'as'=> 'postMail.postMail',
 	'uses' => 'UserController@postMail'
 ]);
@@ -189,35 +189,35 @@ Route::post('hangrongbku/postMail',[
 Route::get('register/verify/{code}', 'Auth\RegisterController@verify');
 
 // this source for admin
-Route::post('hrbku/admin/login',[
+Route::post('phsh/admin/login',[
 	'as'=>'admin.login.postAdminLogin',
 	'uses'=>'AdminController@postAdminLogin'
 ]);
-Route::get('hrbku/admin/logout',[
+Route::get('phsh/admin/logout',[
 	'as'=>'admin.getAdminLogout',
 	'uses'=>'AdminController@getAdminLogout'
 ]);
-Route::get('hrbku/admin/index',[
+Route::get('phsh/admin/index',[
 	'as'=>'admin.index.getIndex',
 	'uses'=>'AdminController@getIndex'
 ]);
-Route::get('hrbku/admin/login',[
+Route::get('phsh/admin/login',[
 	'as'=>'admin.index.getLogin',
 	'uses'=>'AdminController@getLogin'
 ]);
-Route::get('hrbku/admin/lock/{id}',[
+Route::get('phsh/admin/lock/{id}',[
 	'as'=>'admin.index.getLock',
 	'uses'=>'AdminController@getLock'
 ]);
-Route::get('hrbku/admin/user-detail/{id}',[
+Route::get('phsh/admin/user-detail/{id}',[
 	'as'=>'admin.index.getDetail',
 	'uses'=>'AdminController@getDetail'
 ]);
-Route::get('hrbku/admin/product-list',[
+Route::get('phsh/admin/product-list',[
 	'as'=>'admin.index.getProductList',
 	'uses'=>'AdminController@getProductList'
 ]);
-Route::get('hrbku/admin/user-list',[
+Route::get('phsh/admin/user-list',[
 	'as'=>'admin.index.getUserList',
 	'uses'=>'AdminController@getUserList'
 ]);

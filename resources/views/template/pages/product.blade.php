@@ -3,7 +3,7 @@
 <div class="container">
 	<div id="content">
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-sm-4">
 						<img src="{{url('assets/dest/products/' . $product->image .'')}}" alt="">
@@ -23,15 +23,13 @@
 								}
 							?>
 							<p ><input class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value={{$averageRating}} data-size="xs" disabled=""></p> 
-							<p >So luot danh gia: {{$product->numRate}}</p>
+							<p >Số lượt đánh giá: {{$product->numRate}}</p>
 							
 						</div>
 
 						<div class="clearfix"></div>
 						<div class="space20">&nbsp;</div>
 						<div class="single-item-desc">
-								<p>Liên hệ người bán: <a href="" style="color: yellow">{{$seller->name}}</a></p>
-								<div class="space20">&nbsp;</div>
 								<p>Số điện thoại đặt hàng trực tiếp: <a style="color: yellow">{{$seller->phone}}</a></p>
 								
 
@@ -71,9 +69,9 @@
 				<div class="space40">&nbsp;</div>
 				<div class="woocommerce-tabs">
 					<ul class="tabs">
-						<li><a href="#tab-description">Description</a></li>
-						<li><a href="#tab-reviews">Reviews</a></li>
-						<li> <a href="#tab-rating">Rating</a></li>
+						<li><a href="#tab-description">Mô tả</a></li>
+						<li><a href="#tab-reviews">Đánh giá</a></li>
+						<li> <a href="#tab-rating">Xếp hạng</a></li>
 					</ul>
 					<div class="panel" id="tab-rating">
 						<form action="{{route('products.postRating',$product->id)}}" method="POST" >
@@ -117,7 +115,7 @@
 						@endforeach
 						
 						<form action="{{route('product.postComment')}}" method="post">
-							<textarea class="ckeditor" id="summary-ckeditor" name="comment"></textarea>
+							<textarea class="ckeditor" id="summary-ckeditor" name="comment" style="color: black"></textarea>
 							<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 							<script>
 								CKEDITOR.replace('summary-ckeditor');
@@ -185,74 +183,6 @@
 						@endif
 						@endfor
 				</div> <!-- .beta-products-list -->
-			</div>
-			<div class="col-sm-3 aside">
-				<div class="widget">
-					<h3 class="widget-title">Thông tin người bán</h3>
-
-					<img style="max-width:50%; max-height:50%; margin-left: 40px; margin-right:auto; margin-top: 20px;" src="{{url('assets/dest/products/' . $seller->avatar .'')}}" alt=""></a>
-					<div class="widget-body">
-						<div class="beta-sales beta-lists">
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html">
-								<img src="assets/dest/images/products/sales/1.png" alt=""></a>
-								<div class="media-body">
-									Tên:   
-									<span class="beta-sales-price" style="font-size: 15px">{{$seller->name}}</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/2.png" alt=""></a>
-								<div class="media-body">
-									Địa chỉ:  
-									<span class="beta-sales-price" style="font-size: 15px">{{$seller->address}}</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/3.png" alt=""></a>
-								<div class="media-body">
-									SĐT:  
-									<span class="beta-sales-price" style="font-size: 15px">{{$seller->phone}}</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- best sellers widget -->
-				<!-- <div class="widget">
-					<h3 class="widget-title">New Products</h3>
-					<div class="widget-body">
-						<div class="beta-sales beta-lists">
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/1.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/2.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/3.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="assets/dest/images/products/sales/4.png" alt=""></a>
-								<div class="media-body">
-									Sample Woman Top
-									<span class="beta-sales-price">$34.55</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div> <!-- #content -->

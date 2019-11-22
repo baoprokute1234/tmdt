@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hàng Rong BKU </title>
+	<title>Phone Shark Store</title>
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -189,10 +189,10 @@
 							<h4 class="widget-title">Hỗ trợ</h4>
 							<div>
 								<ul>
-									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách đổi - trả - hoàn tiền</a></li>
-									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách khách sỉ</a></li>
-									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Phương thức vận chuyển</a></li>
-									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Phương thức thanh toán</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Chính sách đổi - trả - hoàn tiền</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Chính sách khách sỉ</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Phương thức vận chuyển</a></li>
+									<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Phương thức thanh toán</a></li>
 			
 								</ul>
 							</div>
@@ -203,10 +203,10 @@
 						<h4 class="widget-title">Dịch vụ</h4>
 						<div>
 							<ul>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Điều khoản sử dụng</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Chính sách bảo mật</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Giới thiệu hàng rong BKU</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Hệ thống trung tâm</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Điều khoản sử dụng</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Chính sách bảo mật</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Giới thiệu Phone Shark Store</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i>Hệ thống trung tâm</a></li>
 		
 							</ul>
 						</div>
@@ -219,9 +219,9 @@
 						<div>
 							<div class="contact-info">
 								<i class="fa fa-map-marker"></i>
-								<p>Địa Chỉ: 268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh.</p>
-								<p>Email: hangrongbku@gmail.com.</p>
-								<p>Số điện thoại: 19008198 </p>
+								<p>Địa Chỉ: <a href="https://goo.gl/maps/iRfdC9So9FdYNtjB9">268 Lý Thường Kiệt, Phường 14, Quận 10, Hồ Chí Minh</a></p>
+								<p>Email: <a href="mailto:phonesharkstore@gmail.com">phonesharkstore@gmail.com</a></p>
+								<p>Số điện thoại: <a href="tel:19008198">19008198</a></p>
 							</div>
 						</div>
 					</div>
